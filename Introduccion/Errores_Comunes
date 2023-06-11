@@ -1,0 +1,4 @@
+TypeError: can only concatenate str (not "int") to str
+ Se origina porque lo que estamos tratando de imprimir o mostrar no es un valor correcto.
+
+
