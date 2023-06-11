@@ -1,11 +1,20 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.keys import Keys
-from  selenium.webdriver.common.by import By
 import time
 
-driver = webdriver.Chrome(executable_path=r"C:\Program Files\Python310\Chome_Driver\chromedriver.exe")
-driver.maximize_window()
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+
+options = Options()
+
+options.add_argument("start-maximized")
+options.add_argument("disable-extensions")
+
+driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager().install()),
+    options=options
+)
 
 driver.get("https://demoqa.com/text-box")
 time.sleep(2)
